@@ -1,0 +1,1267 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+   font-family: 'lato'
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'lato', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5; /* Subtle light background */
+  color: #333; /* Primary text color */
+  padding-top: 60px; /* Adjust to navbar height */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Navbar */
+.navbar {
+
+  position: fixed;
+  display: flex;
+  justify-content: space-between; /* Space out the logo and nav links */
+  align-items: center;
+  padding: 10px 20px; /* Reduced padding to make the navbar thinner */
+  background-color: #333; /* Deep blue for a professional look */
+  color: #fff;
+  margin-top: 23px; /* Added some space above the navbar */
+  width: 100%;
+  position:relative;
+height: 45px;
+  z-index: 20;
+  
+  
+}
+
+
+
+.navbar .logo {
+  position:relative; /* Position the logo to the left */
+top: -9px;
+}
+
+.navbar .logo img {
+  max-height: 70px; /* Reduced logo height */
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center; /* Center the nav links horizontally */
+  width: 100%;
+  text-align: center; /* Ensure links are centered */
+}
+
+.nav-links .dropdown {
+  position: relative;
+  text-align: left;
+}
+
+.nav-links .dropdown button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.nav-links .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.nav-links .dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 14px;
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: #444;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+  display:block;
+}
+
+.nav-links a {
+  color: white;
+  padding: 8px 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  background-color:#444;
+  border-radius: 5px;
+}
+
+.nav-link{
+text-align: center;
+  width: auto;
+}
+
+
+
+@media (max-width: 768px) {
+/* Hamburger Icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 30;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: transform 0.3s ease;
+  margin-top:-7px ;
+  position: absolute;
+}
+
+.hamburger:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.hamburger div {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line2 {
+  opacity: 0;
+}
+
+.hamburger.active .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* Navigation Links */
+
+
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    gap: 2px;
+    opacity: 0;
+    transform: translate(-40px);
+    transition: height 0.4s ease, opacity 0.4s ease;
+    z-index: 25;
+    color: white;
+    box-sizing: border-box;
+  }
+
+  .nav-item,.nav-link {
+    top: 0;
+    left: 0;
+    width: 100%;
+ 
+  }
+
+  .nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+   
+
+  }
+
+/* Main content */
+.main {
+  margin-top: 60px; /* Push content below navbar */
+  position: relative; /* Allow shifting of content using top */
+
+  transition: margin-top 0.4s ease; /* Smooth transition */
+}
+
+body.menu-open main {
+  margin-top: 26px; /* Adjust according to navbar + menu height */
+}
+  
+/* Adjust for responsive design */
+@media (max-width: 768px) {
+  body.menu-open .main {
+    margin-top: 260px; /* Adjust this value for smaller screens if the menu is smaller */
+  }
+}
+  .nav-links a {
+    padding: 15px 20px;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background-color: #444;
+    color: #f1f1f1;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-item .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 12px 20px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    transition: all 0.3s ease;
+  }
+
+  .nav-item .nav-link:hover {
+    background-color: #333;
+  }
+
+  .nav-item .arrow {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-item .dropdown {
+    display: none; /* Initially hide the dropdown */
+    flex-direction: column;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    margin-top: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-item.active .dropdown {
+    display: flex;
+  }
+
+  .nav-item.active .arrow {
+    transform: rotate(90deg);
+  }
+
+  .nav-item .dropdown a {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #ddd;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+  }
+
+  .nav-item .dropdown a:hover {
+    background-color: #444;
+    color: white;
+  }
+
+  /* Make the links and arrow only visible when the parent is active */
+  .nav-item .nav-link .arrow {
+    display: inline-block; /* Show arrow */
+    margin-left: 5px; /* Space between text and arrow */
+  }
+
+  /* Hide hamburger icon and functionality for desktop */
+  @media (min-width: 769px) {
+    .hamburger {
+      display: none; /* Hide hamburger icon on desktop */
+    }
+
+    .overlay {
+      display: none; /* Hide overlay on desktop */
+    }
+
+    .nav-links {
+      position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: #333;
+  z-index: 20;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.4s ease;
+    }
+
+    .nav-links a {
+      padding: 12px 20px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      border: none;
+    }
+
+    .nav-item .dropdown {
+      display: block; /* Show dropdown on hover in desktop */
+    }
+
+    .nav-item .dropdown a {
+      font-size: 16px;
+    }
+
+    .nav-item .nav-link:hover .arrow {
+      transform: rotate(0deg); /* No arrow animation on hover in desktop */
+    }
+
+    .nav-item .arrow {
+      display: none; /* Hide arrow on desktop */
+    }
+  }
+
+  body.menu-open {
+    transition: margin-top 0.4s ease;  /* Smooth transition for shifting content */
+    margin-top: calc(100px + var(--menu-height, 0px)); /* Shift the page down */
+  }
+
+  body.menu-open .content-wrapper {
+    margin-top: 60px;  /* Adjust this value to match your menu height */
+    transition: margin-top 0.4s ease;
+  }
+  
+}
+
+
+/* For desktop screens, ensure dropdown appears on hover and arrows are hidden */
+@media (min-width: 769px) {
+  .nav-item:hover .dropdown {
+    display: block; /* Show dropdown on hover in desktop */
+  }
+
+  .nav-item .dropdown {
+    display: none; /* Hide dropdown by default */
+  }
+
+  .nav-item .arrow {
+    display: none; /* Hide arrow for desktop */
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  /* Style the dropdown container */
+  .nav-item .dropdown {
+    display: none; /* Initially hide dropdown */
+    position: absolute; /* Position the dropdown below the button */
+    top: 100%; /* Position dropdown below the button */
+    left: 0; /* Align to the left */
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 200px; /* Set a fixed width for the dropdown */
+    z-index: 20; /* Ensure it appears above other content */
+    padding: 10px 0;
+  }
+
+  /* Display the dropdown when hovering over the parent item */
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+
+  /* Style links inside the dropdown */
+  .nav-item .dropdown a {
+    display: block; /* Make each link a block element so they stack vertically */
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+  }
+
+  /* Hover effect for links inside the dropdown */
+  .nav-item .dropdown a:hover {
+    background-color: #444;
+    color: white;
+  }
+
+  /* Arrow next to the parent link */
+  .nav-item .arrow {
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  /* Hide arrow on desktop since it's not necessary */
+  .nav-item .arrow {
+    display: none;
+  }
+}
+
+
+
+  
+
+/* Slider Section */
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  width: 735px; /* Ensure slider does not exceed 735px width */
+  height: 480px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 0 auto; /* Center the slider horizontally */
+}
+
+/* Slider Images */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: slide 9s infinite;
+
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slider Controls (Prev/Next buttons) */
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.prev-btn,
+.next-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .slider {
+    width: 100%; /* Take full width on mobile */
+    max-width: 100%; /* Ensure no overflow */
+    height: 250px; /* Reduce height for smaller screens */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the slider */
+    margin-top: -45px;
+  }
+
+  .slider-container {
+    flex-direction: column; /* Stack the elements vertically */
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 200px; /* Reduce height further for very small screens */
+  }
+}
+
+
+/* Text Box */
+.info-box {
+  width: 100% ;
+  height: 480px ;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.info-box p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cta-button {
+  padding: 10px 15px;
+  background-color: #136ed0;
+  color: #fff;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  
+}
+
+.social-links a img {
+  width: 35px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-links a img:hover {
+  transform: scale(1.2);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-box {
+    width: 97% ; /* Scale down width for mobile */
+    max-width: 100%; 
+    padding: 10px; /* Reduced padding */
+    gap: 5px; /* Reduce spacing between child elements */
+    height: auto; /* Allow height to adjust based on content */
+    max-height: 450px; /* Set max-height to control the box size */
+    overflow: hidden; /* Hide overflow to keep it tidy */
+  }
+
+  .info-box p {
+    font-size: 0.85rem; /* Adjust text size */
+    margin: 5px 0; /* Minimize top and bottom space around text */
+    line-height: 1.4; /* Reduce line height to compact the text */
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    margin: 10px 0; /* Add some space above and below the button */
+  }
+
+  .social-links {
+    margin-top: 5px; /* Reduce space above the social links */
+    justify-content: center; /* Center-align the icons */
+    gap: 8px; /* Adjust spacing between icons */
+  }
+
+  .social-links a img {
+    width: 30px; 
+    height: 30px; /* Keep icon proportions consistent */
+  }
+}
+
+
+
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Wrapper for Sliding Section and Main Content */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+/* Content Container */
+.content-container {
+  display: flex; /* Use flexbox for better vertical alignment */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Reduced gap for spacing */
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.jobs-section, 
+.news-section {
+  margin-bottom: 0; /* Extra margin remove */
+}
+
+.society-president {
+  grid-area: society-president;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr; /* Single-column layout */
+    gap: 10px; /* Reduced gap for mobile */
+  }
+
+  .jobs-section, 
+  .news-section {
+    width: 100%; /* Take full width on mobile */
+    margin: 0; /* Remove extra margins */
+  }
+}
+
+
+/* Jobs Section */
+.jobs-section {
+  width: 100%; /* Allow the section to take full width on mobile */
+  max-width: 735px; /* Maximum width for larger screens */
+  height: auto; /* Dynamic height based on content */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+ 
+}
+
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.section-header a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+}
+
+/* Job Cards */
+.job-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  gap: 20px; /* Space between cards */
+}
+
+.job-card {
+  flex: 1;
+      min-width: 300px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.job-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.news-card p,
+    .job-card p {
+      margin-bottom: 10px;
+    }
+
+.job-card button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.job-card button:hover {
+  background: #0056b3;
+}
+
+
+
+
+
+
+/* News Section */
+.news-section {
+  width: 231px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+ 
+  height: 528px; /* Same height as job section */
+  margin-bottom: 20px; /* Space between job and news section */
+}
+
+.news-section h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.news-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.news-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 10px;
+}
+
+.news-card a,.job-card a {
+  font-size: 14px;
+  color: #007bff;
+ 
+  text-decoration: underline;
+}
+
+.news-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    gap: 20px; /* Space between sections */
+    padding: 10px; /* Add padding for better appearance */
+  }
+
+  .jobs-section
+   {
+    width: 100%; /* Full width for both sections */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    padding: 15px; /* Add padding for spacing */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .news-section{
+    
+      width: 100%; /* Full width for both sections */
+      background-color: #f9f9f9; /* Light background for better contrast */
+      padding: 15px; /* Add padding for spacing */
+      border-radius: 10px; /* Smooth rounded corners */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      margin-bottom: 20px; /* Add space between sections */
+    height: auto;
+  }
+
+  .jobs-section h2, 
+  .news-section h2 {
+    font-size: 20px; /* Adjust section title font size for mobile */
+    font-weight: bold;
+    color: #333; /* Darker color for better readability */
+    margin-bottom: 10px; /* Space below the title */
+    text-align:left; /* Center align titles for better flow */
+  }
+
+  .job-cards, 
+  .news-container {
+    display: grid; /* Grid layout for items */
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 15px; /* Space between cards */
+  }
+
+  .job-card, 
+  .news-card {
+    background: white; /* Clean white background for cards */
+    padding: 15px; /* Add padding to cards */
+    border-radius: 8px; /* Smooth card corners */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+  }
+
+  .job-card:hover, 
+  .news-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  }
+
+  .job-card h3, 
+  .news-card h3 {
+    font-size: 16px; /* Larger font for card titles */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px; /* Space below card title */
+  }
+
+  .job-card p, 
+  .news-card p {
+    font-size: 14px; /* Adjust text size for readability */
+    color: #555;
+    line-height: 1.6; /* Improve line spacing */
+    margin-bottom: 10px; /* Space below text */
+  }
+
+  .job-card button, 
+  .news-card .read-more {
+    font-size: 14px; /* Proper button size */
+    padding: 8px 12px; /* Comfortable padding */
+    background-color: #136ed0; /* Vibrant blue color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded button */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+
+  .job-card button:hover, 
+  .news-card .read-more:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  .news-card {
+    background: white; /* Clean white background for cards */
+    padding: 15px; /* Add padding to cards */
+    border-radius: 8px; /* Smooth card corners */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+  }
+}
+
+
+
+/* Main Container */
+.main-container {
+  display: flex; /* Use flexbox for better vertical alignment */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Reduced gap for spacing */
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.event-section, 
+.society-president {
+  margin-bottom: 0; /* Extra margin remove */
+}
+
+
+.event-section, 
+.society-president {
+  grid-area: society-president;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr; /* Single-column layout */
+    gap: 10px; /* Reduced gap for mobile */
+  }
+
+  .event-section, 
+  .society-president {
+    width: 100%; /* Take full width on mobile */
+    margin: 0; /* Remove extra margins */
+  }
+}
+/* Event Section Styling */
+.event-section {
+  width: 100%; /* Allow the section to take full width on mobile */
+  max-width: 735px; /* Maximum width for larger screens */
+  height: auto; /* Dynamic height based on content */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+ 
+
+}
+
+.section-header2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header2 h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.section-header2 .view-all {
+  font-size: 14px;
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.section-header2 .view-all:hover {
+  color: #0056b3;
+}
+
+/* Slider Styling */
+.slider-container2 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slider1 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide.active, .slide1.active2 {
+  display: block; /* Show the active slide */
+}
+
+.slide1 {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.slide1 img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Slider Controls */
+.slider-controls2 {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Position buttons on the edges */
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent accidental clicks on slides */
+  z-index: 2; /* Ensure arrows are above the slider images */
+}
+
+.slider-controls2 button {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.slider-controls2 button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 10px; /* Align the left button */
+}
+
+.next-btn {
+  right: 10px; /* Align the right button */
+}
+/* Society President Section */
+.society-president {
+  width: 231px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+ 
+  height: 400px; /* Same height as job section */
+  margin-bottom: 20px; /* Space between job and news section */
+}
+
+.society-president .section-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.president-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.president-photo {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.president-info p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr; /* Stack sections vertically */
+  }
+
+  .event-section, .society-president {
+    margin-bottom: 20px;
+  }
+
+  .slider-controls2 button {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .president-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .president-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .president-info p {
+    font-size: 13px;
+  }
+
+  .content-container {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    gap: 20px; /* Space between sections */
+    padding: 10px; /* Add padding for better appearance */
+  }
+
+  .event-section
+   {
+    width: 100%; /* Full width for both sections */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    padding: 15px; /* Add padding for spacing */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .society-president{
+   
+      width: 100%; /* Full width for both sections */
+      background-color: #f9f9f9; /* Light background for better contrast */
+      padding: 15px; /* Add padding for spacing */
+      border-radius: 10px; /* Smooth rounded corners */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      margin-bottom: 20px; /* Add space between sections */
+    height: auto;
+  }
+
+  .event-section h2, 
+  .society-president h2 {
+    font-size: 18px; /* Adjust section title font size for mobile */
+    font-weight: bold;
+    color: #333; /* Darker color for better readability */
+    margin-bottom: 10px; /* Space below the title */
+    text-align: center; /* Center align titles for better flow */
+  }
+
+
+  
+
+}
+
+
+
+
+/* Footer */
+.footer {
+  background-color: #333;
+  padding: 30px 20px;
+  color: white;
+  border-top: 5px solid #f4f6f9;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 19px;
+  color: #f4f6f9;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.footer-section ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+
+}
+
+.footer-section ul li a {
+  color: #cce5ff;
+}
+
+.footer-section ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #cce5ff;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+.footer-links a {
+  color: #cce5ff;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack items vertically */
+    text-align: left; /* Center align text */
+    gap: 10px; /* Add spacing between items */
+  }
+
+  .footer a {
+    margin: 5px 0; /* Space between links for vertical layout */
+  }
+}
+
+
+
+
+

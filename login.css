@@ -1,0 +1,168 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f5f5f5; /* Light, neutral background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    padding: 10px;
+}
+
+/* Login Wrapper */
+.login-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff; /* Clean white form background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title and Subtitle */
+.login-title {
+    font-size: 24px; /* Adjusted for smaller screens */
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #1d3557; /* Dark navy for elegance */
+}
+
+.login-subtitle {
+    font-size: 13px; /* Slightly smaller for compact layout */
+    margin-bottom: 20px;
+    color: #6c757d; /* Muted text for subtle guidance */
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057; /* Medium gray for contrast */
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px; /* Slightly larger for easier tapping */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f8f9fa; /* Subtle input background */
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #007bff; /* Highlight with blue focus */
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Options Section */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    gap: 10px; /* Space between elements */
+}
+
+.options .remember-me {
+    display: flex;
+    align-items: center;
+    color: #6c757d;
+}
+
+.options input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.options .forgot-password {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.options .forgot-password:hover {
+    color: #0056b3;
+}
+
+/* Login Button */
+.login-button {
+    width: 100%;
+    padding: 14px 0; /* Increased padding for better touch targets */
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Ensure spacing on small devices */
+    }
+
+    .login-wrapper {
+        padding: 15px; /* Reduce padding for compact layout */
+    }
+
+    .login-title {
+        font-size: 22px; /* Slightly smaller title for mobile */
+    }
+
+    .login-subtitle {
+        font-size: 12px; /* Compact subtitle size */
+    }
+
+    .options {
+        font-size: 13px; /* Adjusted size for clarity */
+    }
+
+    .login-button {
+        padding: 12px 0; /* Compact yet comfortable button */
+    }
+}
